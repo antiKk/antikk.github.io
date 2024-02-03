@@ -153,9 +153,6 @@ $("#settings input, #settings select").on('change', function() {
 		case 'Garlic OS':
 			line2 += 'Black-Seraph';
 			break;
-		case 'MiniUI':
-			line2 += 'Shaun Inman';
-			break;
 		case 'muOS':
 			line2 += 'adixal';
 			break;
