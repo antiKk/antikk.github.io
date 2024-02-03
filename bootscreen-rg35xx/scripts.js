@@ -140,7 +140,7 @@ $("#settings input, #settings select").on('change', function() {
 	var sd2 = $('select[name=sd2] option:selected', "#settings").val();
 
 	var line1 = firmware;
-	var line2 = 'Copyright (C) 2023, ';
+	var line2 = 'Copyright (C) 2024, ';
 	var use_bootinput = false;
 
 	if ($('select[name=boottool] option:selected', "#settings").val() == 'custom') {
@@ -155,6 +155,9 @@ $("#settings input, #settings select").on('change', function() {
 			break;
 		case 'MiniUI':
 			line2 += 'Shaun Inman';
+			break;
+		case 'muOS':
+			line2 += 'adixal';
 			break;
 	}
 
@@ -191,9 +194,11 @@ $("#settings input, #settings select").on('change', function() {
 	write(40, fontSize * 1, line1);
 	write(40, fontSize * 2, line2);
 
-	write(32, fontSize * 6, 'Anbernic RG35XX (ver 1.0)');
-	write(32, fontSize * 8, 'Main Processor    :   ATM7039S Quad-Core ARM Cortex-A9 1.5GHz');
-	write(32, fontSize * 9, 'Memory Test       :   262144KB OK');
+	/* write(32, fontSize * 6, 'Anbernic RG35XX (ver 1.0)'); */
+	/* write(32, fontSize * 8, 'Main Processor    :   ATM7039S Quad-Core ARM Cortex-A9 1.5GHz'); */
+	write(32, fontSize * 6, 'Anbernic RG35XX Plus';
+	write(32, fontSize * 8, 'Main Processor    :   AllWinner H700 Quad-Core ARM Cortex-A53 1.5GHz');
+	write(32, fontSize * 9, 'Memory Test       :   1048576KB OK');
 
 	write(32, fontSize * 11, 'Plug and Play BIOS Extension, v1.0A');
 	write(64, fontSize * 12, 'Detecting Primary Master      ... ' + (sd1 !== 'None' ? sd1 + ' TF1/INT MicroSD': sd1));
