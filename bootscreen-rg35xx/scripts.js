@@ -191,8 +191,6 @@ $("#settings input, #settings select").on('change', function() {
 	write(40, fontSize * 1, line1);
 	write(40, fontSize * 2, line2);
 
-	/* write(32, fontSize * 6, 'Anbernic RG35XX (ver 1.0)'); */
-	/* write(32, fontSize * 8, 'Main Processor    :   ATM7039S Quad-Core ARM Cortex-A9 1.5GHz'); */
 	write(32, fontSize * 6, 'Anbernic RG35XX Plus';
 	write(32, fontSize * 8, 'Main Processor    :   AllWinner H700 Quad-Core ARM Cortex-A53 1.5GHz');
 	write(32, fontSize * 9, 'Memory Test       :   1048576KB OK');
