@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Old School PC BIOS - Splash Bootscreen Generator for Anbernic RG35XX</title>
+	
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Roboto:100,300,400,500,600|Material+Icons" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+	<link rel="stylesheet" href="webfont/PerfectDOSVGA437Win.css">
+	<link rel="stylesheet" href="styles.css">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+	<meta property="og:title" content="Old School PC BIOS" />
+	<meta property="og:description" content="Splash Bootscreen Generator for Anbernic RG35XX" />
+	<meta property="og:image" content="https://images2.imgbox.com/15/54/h8ThctZU_o.png" />
+	<meta property="og:url" content="https://xquader.github.io/bootscreen-rg35xx/" />
+	
+	<!--[if lt IE 9]>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<a href="https://github.com/xquader/bootscreen-rg35xx">
+		<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png">
+	</a>
+
+	<div class="container">
+		<h1>Old School PC BIOS</h1>
+		<p id="subtitle">Splash Bootscreen Generator <small>v2.0</small></p>
+
+
+
+		<form id="settings">
+			<div class="row">
+				<fieldset id="options">
+					<legend >Options</legend>
+					<div class="input-field col s6 m2">
+						<select name="firmware">
+							<option value="Garlic OS" selected="selected">Garlic OS</option>
+							<option value="MiniUI">muOS</option>
+						</select>
+						<label>Firmware</label>
+					</div>
+					<div class="input-field col s6 m2">
+						<select name="sd1" class="form-control">
+							<option value="None">None</option>
+							<option value="2GB">2GB</option>
+							<option value="4GB">4GB</option>
+							<option value="8GB">8GB</option>
+							<option value="16GB">16GB</option>
+							<option value="32GB">32GB</option>
+							<option value="64GB" selected="selected">64GB</option>
+							<option value="128GB">128GB</option>
+							<option value="200GB">200GB</option>
+							<option value="256GB">256GB</option>
+							<option value="512GB">512GB</option>
+							<option value="1024GB">1024GB</option>
+							<option value="1TB">1TB</option>
+						</select>
+						<label>TF1/INT SD Card</label>
+					</div>
+					<div class="input-field col s6 m2">
+						<select name="sd2" class="form-control">
+							<option value="None">None</option>
+							<option value="2GB">2GB</option>
+							<option value="4GB">4GB</option>
+							<option value="8GB">8GB</option>
+							<option value="16GB">16GB</option>
+							<option value="32GB">32GB</option>
+							<option value="64GB">64GB</option>
+							<option value="128GB" selected="selected">128GB</option>
+							<option value="200GB">200GB</option>
+							<option value="256GB">256GB</option>
+							<option value="512GB">512GB</option>
+							<option value="1024GB">1024GB</option>
+							<option value="1TB">1TB</option>
+						</select>
+						<label>TF2/EXT SD Card</label>
+					</div>
+					<div class="input-field col s12 m3">
+						<select name="logoOptions" class="form-control form-control-sm">
+							<option value="noLogo">No Logo</option>
+							<option value="energyStar" selected="selected">Energy Star Logo</option>
+						</select>
+						<label>Side Logo</label>
+					</div>
+				</fieldset>
+			</div>
+			<div class="row">
+				<fieldset id="otheroptions">
+					<legend>Other Options</legend>
+					<p>
+						<label>
+							<input type="checkbox" class="filled-in" id="hold" name="hold" checked="checked">
+							<span></span>
+						</label>
+						<span><strong>Press</strong></span>
+						<span class="input-field inline">
+							<select name="onboot" class="form-control form-control-sm">
+								<option value="vol">MENU + VOL DOWN/UP</option>
+							</select>
+						</span>
+						<span>to change</span>
+						<span class="input-field inline">
+							<input type="text" name="boottool" val="." style="display: none;" class="form-control form-control-sm" />
+							<select name="boottool" class="form-control form-control-sm">
+								<option value="brightness"><em>BRIGHTNESS</em></option>
+<!--									<option value="custom"><em>Custom</em></option>-->
+							</select>
+						</span>
+					</p>
+				</fieldset>
+			</div>
+		</form>
+	
+		<center><canvas width="640" height="480" id="topscreen"></canvas></center>
+		<center>
+			<a id="downloadPNG" class="btn btn-primary" href="#png" role="button">Download PNG image</a>
+			<a id="downloadGZ" class="btn btn-primary" href="#gz" role="button">Download boot_logo.bmp.gz</a>
+		</center>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jcanvas/16.7.3/jcanvas.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/downloadjs/1.4.7/download.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<script src="https://unpkg.com/pako@2.1.0/dist/pako_deflate.js"></script>
+	<script src="scripts.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			M.AutoInit();
+		});
+	</script>
+</body>
+</html>
